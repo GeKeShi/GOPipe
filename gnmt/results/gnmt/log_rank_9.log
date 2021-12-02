@@ -1,0 +1,55 @@
+2021-10-17 09:53:31 - INFO - 9 - Saving results to: results/gnmt
+2021-10-17 09:53:31 - INFO - 9 - Run arguments: Namespace(Gpipe=False, batching='bucketing', beam_size=5, cov_penalty_factor=0.1, cuda=True, cudnn=True, dataset_dir='/gf3/home/xyye/wmt16_de_en', decay_factor=0.5, decay_interval=None, decay_steps=4, dropout=0.2, env=False, epochs=8, eval=True, grad_clip=5.0, hidden_size=1024, intra_epoch_eval=0, keep_checkpoints=0, len_norm_const=5.0, len_norm_factor=0.6, local_rank=1, lr=0.001, math='fp32', max_length_test=150, max_length_train=50, max_length_val=125, max_size=None, min_length_test=0, min_length_train=0, min_length_val=0, num_buckets=5, num_layers=8, num_split=4, optimizer='Adam', optimizer_extra='{}', partition=4, print_freq=10, rank=9, remain_steps=0.666, results_dir='results', resume=None, save='gnmt', save_all=False, save_freq=5000, save_path='results/gnmt', seed=None, shard_size=80, share_embedding=True, smoothing=0.1, start_epoch=0, target_bleu=24.0, test_batch_size=16, test_loader_workers=0, train_batch_size=128, train_global_batch_size=None, train_iter_size=1, train_loader_workers=2, train_num=4, val_batch_size=16, val_loader_workers=0, warmup_steps=200)
+2021-10-17 09:53:32 - INFO - 9 - Worker 9 is using worker seed: 3348590967
+2021-10-17 09:53:46 - INFO - 9 - Sequential(
+  (Dropout4): dropout1(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (E_lstm5): lstm1(
+    (layer): LSTM(1024, 1024)
+  )
+  (Dropout5): dropout1(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (E_lstm6): lstm1(
+    (layer): LSTM(1024, 1024)
+  )
+  (Dropout6): dropout1(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (E_lstm7): lstm1(
+    (layer): LSTM(1024, 1024)
+  )
+  (Dropout7): dropout1(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (E_lstm8): lstm1(
+    (layer): LSTM(1024, 1024)
+  )
+  (Emb2): embed2(
+    (embed): Embedding(32320, 1024, padding_idx=0)
+  )
+  (Dropout8): dropout2(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (D_lstm1): lstm2(
+    (layer): LSTM(1024, 1024)
+  )
+)
+2021-10-17 09:53:46 - INFO - 9 - Training optimizer config: {'optimizer': 'Adam', 'lr': 0.001}
+2021-10-17 09:53:46 - INFO - 9 - Training LR schedule config: {'warmup_steps': 200, 'remain_steps': 0.666, 'decay_interval': None, 'decay_steps': 4, 'decay_factor': 0.5}
+2021-10-17 09:53:46 - INFO - 9 - Number of stage1 parameters: 75079680
+2021-10-17 09:53:51 - INFO - 9 - Using optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+2021-10-17 09:53:51 - INFO - 9 - Scheduler warmup steps: 200
+2021-10-17 09:53:51 - INFO - 9 - Scheduler remain steps: 9078
+2021-10-17 09:53:51 - INFO - 9 - Scheduler decay interval: 1138
+2021-10-17 09:53:51 - INFO - 9 - Scheduler decay factor: 0.5
+2021-10-17 09:53:51 - INFO - 9 - Scheduler max decay steps: 4
+2021-10-17 09:53:51 - INFO - 9 - Starting epoch 0

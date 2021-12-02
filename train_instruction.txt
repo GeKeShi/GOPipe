@@ -1,0 +1,24 @@
+GBS=train-batch-size*train-num*num_dp
+gnmt-hippie：
+python -m torch.distributed.launch --master_addr=192.180.15.50 --nnodes=4 --node_rank=0 --nproc_per_node=4 train.py --dataset-dir='/gf3/home/xyye/wmt16_de_en' --test-batch-size=16 --val-batch-size=16 --intra-epoch-eval=10 --num-split=4 --train-num=4 --train-batch-size=64 --partition=3
+
+gnmt-DP: (gf3/home/xyye/nmt-master-pytorch-origin/pytorch)
+python -m torch.distributed.launch --nnodes=4 --node_rank=0 --master_addr=192.180.15.50 --nproc_per_node=4 train.py --dataset-dir='/gf3/home/xyye/wmt16_de_en' --test-batch-size=16 --val-batch-size=16 --intra-epoch-eval=10 --num-layer=8 --no-share-embedding --train-batch-size=64
+
+
+vgg-hippie：
+python main-pipeline.py --dist-url 'tcp://192.180.15.50:23456' --dist-backend 'nccl' --multiprocessing-distributed --world-size 2 --rank 0 /ssd/dataset/ --num-split=2 --train-num=4 --batch-size=64 --partition=3
+
+vgg-DP:
+python main-imagenet.py -a vgg16 --dist-url 'tcp://192.180.15.50:23456' --dist-backend 'nccl' --multiprocessing-distributed --world-size 2 --rank 0 /ssd/dataset/ -b=256
+
+
+Amoebanet-hippie：
+python Amoebanet-pipeline.py --dist-url 'tcp://192.180.15.50:23456' --world-size=4 --rank=3 --num-layers=18 --num-filters=208 --num-split=2 --train-num=4 --batch-size=16 --partition=3
+
+Amoebanet-DP：
+python Amoebanet-try.py --dist-url 'tcp://192.180.15.50:23456' --world-size=4 --rank=0 --num-layers=18 --num-filters=208 --batch-size=16
+
+
+partition_algorithm:
+gnmt/try.py

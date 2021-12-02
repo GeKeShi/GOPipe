@@ -1,0 +1,53 @@
+2021-10-17 09:53:31 - INFO - 15 - Saving results to: results/gnmt
+2021-10-17 09:53:31 - INFO - 15 - Run arguments: Namespace(Gpipe=False, batching='bucketing', beam_size=5, cov_penalty_factor=0.1, cuda=True, cudnn=True, dataset_dir='/gf3/home/xyye/wmt16_de_en', decay_factor=0.5, decay_interval=None, decay_steps=4, dropout=0.2, env=False, epochs=8, eval=True, grad_clip=5.0, hidden_size=1024, intra_epoch_eval=0, keep_checkpoints=0, len_norm_const=5.0, len_norm_factor=0.6, local_rank=3, lr=0.001, math='fp32', max_length_test=150, max_length_train=50, max_length_val=125, max_size=None, min_length_test=0, min_length_train=0, min_length_val=0, num_buckets=5, num_layers=8, num_split=4, optimizer='Adam', optimizer_extra='{}', partition=4, print_freq=10, rank=15, remain_steps=0.666, results_dir='results', resume=None, save='gnmt', save_all=False, save_freq=5000, save_path='results/gnmt', seed=None, shard_size=80, share_embedding=True, smoothing=0.1, start_epoch=0, target_bleu=24.0, test_batch_size=16, test_loader_workers=0, train_batch_size=128, train_global_batch_size=None, train_iter_size=1, train_loader_workers=2, train_num=4, val_batch_size=16, val_loader_workers=0, warmup_steps=200)
+2021-10-17 09:53:32 - INFO - 15 - Worker 15 is using worker seed: 3348590967
+2021-10-17 09:53:46 - INFO - 15 - Building LabelSmoothingLoss (smoothing: 0.1)
+2021-10-17 09:53:46 - INFO - 15 - Sequential(
+  (Dropout13): dropout3(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (D_lstm6): lstm3(
+    (layer): LSTM(2048, 1024)
+  )
+  (Dropout14): dropout3(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (D_lstm7): lstm3(
+    (layer): LSTM(2048, 1024)
+  )
+  (Dropout15): dropout3(
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (D_lstm8): lstm3(
+    (layer): LSTM(2048, 1024)
+  )
+  (Classifier): Classifier(
+    (classifier): Linear(in_features=1024, out_features=32320, bias=True)
+  )
+)
+2021-10-17 09:53:46 - INFO - 15 - Training optimizer config: {'optimizer': 'Adam', 'lr': 0.001}
+2021-10-17 09:53:46 - INFO - 15 - Training LR schedule config: {'warmup_steps': 200, 'remain_steps': 0.666, 'decay_interval': None, 'decay_steps': 4, 'decay_factor': 0.5}
+2021-10-17 09:53:46 - INFO - 15 - Number of stage3 parameters: 70901312
+2021-10-17 09:53:51 - INFO - 15 - Using optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+2021-10-17 09:53:51 - INFO - 15 - Scheduler warmup steps: 200
+2021-10-17 09:53:51 - INFO - 15 - Scheduler remain steps: 9078
+2021-10-17 09:53:51 - INFO - 15 - Scheduler decay interval: 1138
+2021-10-17 09:53:51 - INFO - 15 - Scheduler decay factor: 0.5
+2021-10-17 09:53:51 - INFO - 15 - Scheduler max decay steps: 4
+2021-10-17 09:53:51 - INFO - 15 - Starting epoch 0
+2021-10-17 09:53:54 - INFO - 15 - ['TRAIN [0][0/1704]', 'Loss/tok 11.5344 (11.5344)']
+2021-10-17 09:54:01 - INFO - 15 - ['TRAIN [0][10/1704]', 'Loss/tok 10.2459 (10.8466)']
+2021-10-17 09:54:08 - INFO - 15 - ['TRAIN [0][20/1704]', 'Loss/tok 9.8872 (10.5068)']
+2021-10-17 09:54:15 - INFO - 15 - ['TRAIN [0][30/1704]', 'Loss/tok 9.6243 (10.2678)']
+2021-10-17 09:54:21 - INFO - 15 - ['TRAIN [0][40/1704]', 'Loss/tok 9.3711 (10.0744)']
+2021-10-17 09:54:28 - INFO - 15 - ['TRAIN [0][50/1704]', 'Loss/tok 9.2623 (9.9226)']
+2021-10-17 09:54:35 - INFO - 15 - ['TRAIN [0][60/1704]', 'Loss/tok 9.0331 (9.7814)']
+2021-10-17 09:54:41 - INFO - 15 - ['TRAIN [0][70/1704]', 'Loss/tok 9.0130 (9.6590)']
+2021-10-17 09:54:48 - INFO - 15 - ['TRAIN [0][80/1704]', 'Loss/tok 8.5754 (9.5429)']
